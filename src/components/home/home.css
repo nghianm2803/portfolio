@@ -14,7 +14,6 @@
   align-items: center;
   max-width: 540px;
   text-align: center;
-  z-index: 1;
 }
 
 .home__img {
@@ -31,6 +30,7 @@
   justify-content: center;
   column-gap: 1.75rem;
   margin: 1.5rem 0;
+  z-index: 1;
 }
 
 .home__social-link {
@@ -70,6 +70,10 @@
 .dark .home__scroll-name,
 .dark .home__social-link {
   color: var(--text-dark);
+}
+
+.dark .home__social-link:hover {
+  color: var(--body-color);
 }
 
 .dark .mouse {

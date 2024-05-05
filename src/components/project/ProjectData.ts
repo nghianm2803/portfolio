@@ -35,8 +35,8 @@ const Projects = [
     image: Work4,
     title: "Personal site",
     category: "Frontend",
-    stack: "ReactJS",
-    demo: "https://github.com/nghianm2803/Portfolio",
+    stack: "Typescript, NextJS",
+    demo: "https://github.com/nghianm2803/portfolio",
   },
   {
     id: 5,
