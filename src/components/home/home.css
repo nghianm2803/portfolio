@@ -44,7 +44,7 @@
 
 .scroll__down {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 12.5rem;
   left: 0;
   width: 100%;
 }
@@ -62,6 +62,21 @@
   margin-top: 0.75rem;
   border-radius: 1rem;
   position: relative;
+}
+
+/*========= Dark Theme =========*/
+.dark .home__name,
+.dark .home__education,
+.dark .home__scroll-name,
+.dark .home__social-link {
+  color: var(--text-dark);
+}
+
+.dark .mouse {
+  border: 2px solid #8e86d5;
+}
+.dark .wheel {
+  background-color: var(--text-dark);
 }
 
 @keyframes ani-mouse {

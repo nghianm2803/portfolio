@@ -2,6 +2,7 @@
 
 import React, { FC, useState } from "react";
 import "./sidebar.css";
+import ToggleTheme from "./ToggleTheme";
 
 export const Sidebar: FC = () => {
   const [toggle, showMenu] = useState(false);
@@ -11,6 +12,11 @@ export const Sidebar: FC = () => {
         <nav className="nav">
           <div className="nav__menu">
             <ul className="nav__list">
+              <li className="nav__item">
+                <div className="nav__theme">
+                  <ToggleTheme />
+                </div>
+              </li>
               <li className="nav__item">
                 <a href="#home" className="nav__link">
                   <i className="icon-home"></i>
@@ -49,6 +55,7 @@ export const Sidebar: FC = () => {
                 href="https://github.com/nghianm2803"
                 target="_blank"
                 rel="noreferrer"
+                className="link__github"
               >
                 NghiaNM
               </a>

@@ -92,6 +92,11 @@
   transform: translateY(0);
 }
 
+/*========= Dark Theme =========*/
+.dark .work__mask {
+  background: var(--bg-dark);
+}
+
 @media screen and (max-width: 1024px) {
   .work__container {
     grid-template-columns: repeat(2, 330px);

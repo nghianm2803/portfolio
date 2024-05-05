@@ -18,6 +18,12 @@
   flex-direction: column;
   row-gap: 1rem;
 }
+
+.nav__theme {
+  position: relative;
+  left: -12px;
+}
+
 .nav__link {
   font-size: 1.5rem;
   color: var(--title-color);
@@ -25,7 +31,8 @@
   transition: 0.3s;
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.link__github:hover {
   color: hsl(345, 76%, 56%);
 }
 
@@ -50,6 +57,21 @@
   align-items: center;
   z-index: 1;
   transition: 0.3s;
+}
+
+/*========= Dark Theme =========*/
+.dark .aside {
+  background: var(--bg-dark);
+}
+
+.dark .nav__link,
+.dark .copyright {
+  color: var(--text-dark);
+}
+
+.dark .nav__link:hover,
+.dark .link__github:hover {
+  color: var(--body-color);
 }
 
 @media screen and (max-width: 1024px) {

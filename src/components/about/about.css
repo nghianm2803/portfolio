@@ -50,6 +50,20 @@
   gap: 0.5rem;
 }
 
+/*========= Dark Theme =========*/
+.dark .about__description,
+.dark .skills__name {
+  color: var(--text-dark);
+}
+
+.dark .about__data {
+  background-color: var(--bg-dark);
+}
+
+.dark .about__data::before {
+  border-right: 15px solid var(--bg-dark);
+}
+
 @media screen and (max-width: 1024px) {
   .about__container {
     grid-template-columns: 720px;
@@ -68,7 +82,6 @@
   .about__img {
     justify-self: center;
   }
-
 }
 
 @media screen and (max-width: 768px) {

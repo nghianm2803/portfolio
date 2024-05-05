@@ -5,8 +5,6 @@ import {
   NodeJsIcon,
   ReactIcon,
   TsIcon,
-  HtmlIcon,
-  CssIcon,
   JsIcon,
   MongoDbIcon,
   ExpressIcon,
@@ -24,14 +22,12 @@ const About: FC = () => {
           <div className="about__info">
             <p className="about__description">
               👋 Hey, I am <b> Minh Nghia </b> but you can call me <b>Doo</b>. I
-              have a strong foundation in frontend development and I&apos;m
-              actively expanding my skills in backend development with Node.js
-              and MongoDB. I&apos;m highly motivated to become a Fullstack
-              developer. My preferred tools are ReactJS and NodeJS.
+              am an enthusiastic and active learner who is willing to study new
+              knowledge and cultivate myself better every day. I am keen on
+              Information Technology, and Business Information Technology and
+              have skills in Typescript, Javascript, ReactJS, Vuejs, Node.js,
+              Express, Rest APIs, MongoDB, etc...
             </p>
-            {/* <a href={CV} download className="btn">
-              Download CV
-            </a> */}
           </div>
 
           <div className="about__skills grid">
@@ -48,7 +44,7 @@ const About: FC = () => {
                 <TsIcon />
                 <JsIcon />
                 <ReactIcon />
-                <VueIcon/>
+                <VueIcon />
               </div>
             </div>
             <div className="skills__data">
