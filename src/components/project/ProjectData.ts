@@ -12,7 +12,7 @@ const Projects = [
     title: "Bedlinker",
     category: "Frontend",
     stack: "Typescript, ReactJS, Ant Design",
-    demo: "https://bedlinker-site-dev.ebk.vn/",
+    demo: "https://bedlinker.vn/",
   },
   {
     id: 2,
