@@ -9,6 +9,8 @@ import {
   MongoDbIcon,
   ExpressIcon,
   VueIcon,
+  DartIcon,
+  FlutterIcon,
 } from "./Stack";
 import Image from "next/image";
 
@@ -21,12 +23,14 @@ const About: FC = () => {
         <div className="about__data grid">
           <div className="about__info">
             <p className="about__description">
-              👋 Hey, I am <b> Minh Nghia </b> but you can call me <b>Doo</b>. I
-              am an enthusiastic and active learner who is willing to study new
-              knowledge and cultivate myself better every day. I am keen on
-              Information Technology, and Business Information Technology and
-              have skills in Typescript, Javascript, ReactJS, Vuejs, Node.js,
-              Express, Rest APIs, MongoDB, etc...
+              👋 Hey, I am <b> Minh Nghia </b>, an enthusiastic web developer
+              with a strong background in modern web technologies. I am
+              proficient in TypeScript, JavaScript, and frameworks such as
+              ReactJS and VueJS. My expertise extends to backend development
+              with NodeJS and ExpressJS, and database management using MongoDB.
+              Additionally, I have experience in cross-platform mobile
+              development with Dart and Flutter. I am deeply motivated to
+              deliver quality solutions to new challenges in web development.
             </p>
           </div>
 
@@ -45,6 +49,15 @@ const About: FC = () => {
                 <JsIcon />
                 <ReactIcon />
                 <VueIcon />
+              </div>
+            </div>
+            <div className="skills__data">
+              <div className="skills__titles">
+                <h3 className="skills__name">Mobile App</h3>
+              </div>
+              <div className="skills__stack grid">
+                <DartIcon />
+                <FlutterIcon />
               </div>
             </div>
             <div className="skills__data">

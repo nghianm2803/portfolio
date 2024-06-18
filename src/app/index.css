@@ -150,19 +150,11 @@ img {
   background-color: var(--bg-dark);
 }
 
-.dark .section__title{
+.dark .section__title {
   color: var(--text-dark);
 }
 
-@keyframes button-push {
-  50% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .btn:hover {
-  animation: button-push 0.3s linear 1;
+  transform: scale(1.05);
+  transition: all ease-in-out 0.3s;
 }

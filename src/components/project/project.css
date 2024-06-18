@@ -38,6 +38,7 @@
   padding: 0.19rem 0.625rem;
   transform: translateY(-40px);
   transition: 0.3s;
+  cursor: default;
 }
 
 .work__title {
@@ -50,9 +51,10 @@
   transform: translateY(30px);
   transition: 0.3s;
   opacity: 0;
+  cursor: default;
 }
 
-.work__stack{
+.work__stack {
   color: #fff;
   font-size: var(--h4-font-size);
   margin: 0 0 0.98rem;
@@ -62,6 +64,7 @@
   transform: translateY(30px);
   transition: 0.3s;
   opacity: 0;
+  cursor: default;
 }
 
 .work__button {
@@ -87,7 +90,7 @@
 
 .work__card:hover .work__title,
 .work__card:hover .work__category,
-.work__card:hover .work__stack  {
+.work__card:hover .work__stack {
   opacity: 1;
   transform: translateY(0);
 }

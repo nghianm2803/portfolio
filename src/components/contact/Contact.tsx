@@ -44,7 +44,7 @@ export const Contact: FC = () => {
           <p className="contact__details">
             I&apos;m always interested in new projects and opportunities.
             Don&apos;t hesitate to give me a call or send an email, I&apos;ll
-            get back to you as soon as I can!. 👋
+            get back to you as soon as I can! 👋
           </p>
         </div>
        
