@@ -28,6 +28,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SPOTIFY_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_ID }}
+      NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET: ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET }}
+      NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{ secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,7 +51,6 @@ jobs:
           else
             echo "Unable to determine package manager"
             exit 1
-          fi
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
