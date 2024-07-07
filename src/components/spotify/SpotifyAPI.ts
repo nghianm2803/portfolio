@@ -31,7 +31,7 @@ const getTokens = async (code: string) => {
       body: querystring.stringify({
         grant_type: "authorization_code",
         code,
-        redirect_uri: "http://localhost:3000",
+        redirect_uri: "https://nghianm2803.github.io/portfolio/",
       }),
     });
 
