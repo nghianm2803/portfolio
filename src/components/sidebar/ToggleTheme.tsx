@@ -37,9 +37,9 @@ const ToggleTheme: FC = () => {
       <svg
         width="24"
         viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke-linejoin="round"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinejoin="round"
+        strokeLinecap="round"
         stroke="currentColor"
         height="24"
         fill="none"
