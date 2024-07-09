@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "./index.css";
-import { ThemeProvider } from "next-themes";
-import Script from "next/script";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import './index.css'
+import { ThemeProvider } from 'next-themes'
+import Script from 'next/script'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "NghiaNM",
-  description: "My Portfolio",
-};
+  title: 'NghiaNM',
+  description: 'My Portfolio',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -40,5 +40,5 @@ export default function RootLayout({
         <body className={inter.className}>{children}</body>
       </ThemeProvider>
     </html>
-  );
+  )
 }

@@ -1,40 +1,42 @@
-"use client";
+'use client'
 
-import React, { FC, useRef, useState } from "react";
-import "./contact.css";
-import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
-import ToastMsg from "./Toast";
+import React, { FC, useRef, useState } from 'react'
+import './contact.css'
+import emailjs from 'emailjs-com'
+import { toast } from 'react-toastify'
+import ToastMsg from './Toast'
 
 export const Contact: FC = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const form = useRef<HTMLFormElement>(null)
+  const [submitting, setSubmitting] = useState(false)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sendEmail = (e: any) => {
-    e.preventDefault();
-    setSubmitting(true);
+    e.preventDefault()
+    setSubmitting(true)
 
     emailjs
       .sendForm(
-        "service_jz9tf5c",
-        "template_yq1v8j9",
+        'service_jz9tf5c',
+        'template_yq1v8j9',
         form.current!,
-        "B9D1FhvAE3Pi2pmog"
+        'B9D1FhvAE3Pi2pmog',
       )
       .then(
         () => {
-          setSubmitting(false);
+          setSubmitting(false)
           toast.success(
-            "Thank you for your message! I'll get back to you soon!"
-          );
+            'Thank you for your message! I`ll get back to you soon!',
+          )
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (error: any) => {
-          setSubmitting(false);
-          toast.error(error.text);
-        }
-      );
-    e.target.reset();
-  };
+          setSubmitting(false)
+          toast.error(error.text)
+        },
+      )
+    e.target.reset()
+  }
   return (
     <section className="contact container section" id="contact">
       <h2 className="section__title">Get In Touch</h2>
@@ -47,7 +49,7 @@ export const Contact: FC = () => {
             get back to you as soon as I can! 👋
           </p>
         </div>
-       
+
         <form className="contact__form" ref={form} onSubmit={sendEmail}>
           <div className="contact__form-group">
             <div className="contact__form-div">
@@ -91,13 +93,13 @@ export const Contact: FC = () => {
           </div>
 
           <button type="submit" className="btn" disabled={submitting}>
-            {submitting ? "Submitting..." : "Submit"}
+            {submitting ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       </div>
       <ToastMsg />
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,18 +1,35 @@
 {
-  "name": "my-portfolio",
+  "name": "portfolio",
   "version": "1.1.0",
   "homepage": "https://nghianm2803.github.io/portfolio/",
   "private": true,
+  "description": "Personal site",
+  "author": "NghiaNM",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "6.x",
+    "@typescript-eslint/parser": "6.x",
+    "babel-eslint": "10.x",
     "dotenv": "^16.4.5",
     "emailjs-com": "^3.2.0",
+    "eslint-config-airbnb": "19.x",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "8.x",
+    "eslint-config-react": "1.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "5.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "4.x",
+    "eslint-plugin-testing-library": "5.x",
     "next": "14.2.2",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -21,9 +38,12 @@
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {
+    "@dwarvesf/react-eslint-config": "^1.0.1",
+    "@next/eslint-plugin-next": "^13.5.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "husky": "^9.0.11",
@@ -34,6 +54,10 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "*.{html,css,tsx,jsx,ts,js,md,json}": "prettier --write"
+    "*.{html,css,tsx,jsx,ts,js,md,json}": "prettier --write",
+    "*.{js,jsx,tsx,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

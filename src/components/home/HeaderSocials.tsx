@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import React, { FC } from 'react'
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { SiLeetcode } from 'react-icons/si'
 
 const HeaderSocials: FC = () => {
   return (
@@ -9,6 +9,7 @@ const HeaderSocials: FC = () => {
         href="https://www.linkedin.com/in/nghianm2803/"
         className="home__social-link"
         target="_blank"
+        aria-label="LinkedIn"
       >
         <FaLinkedin />
       </a>
@@ -16,6 +17,7 @@ const HeaderSocials: FC = () => {
         href="https://github.com/nghianm2803"
         className="home__social-link"
         target="_blank"
+        aria-label="Github"
       >
         <FaGithub />
       </a>
@@ -23,6 +25,7 @@ const HeaderSocials: FC = () => {
         href="https://leetcode.com/u/nghianm2803/"
         className="home__social-link"
         target="_blank"
+        aria-label="Leetcode"
       >
         <SiLeetcode />
       </a>
@@ -30,11 +33,12 @@ const HeaderSocials: FC = () => {
         href="https://t.me/DooCharSiu"
         className="home__social-link"
         target="_blank"
+        aria-label="Telegram"
       >
         <FaTelegram />
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default HeaderSocials;
+export default HeaderSocials

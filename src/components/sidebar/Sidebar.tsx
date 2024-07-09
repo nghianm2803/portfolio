@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import React, { FC, useState } from "react";
-import "./sidebar.css";
-import ToggleTheme from "./ToggleTheme";
+import React, { FC, useState } from 'react'
+import './sidebar.css'
+import ToggleTheme from './ToggleTheme'
 
 export const Sidebar: FC = () => {
-  const [toggle, showMenu] = useState(false);
+  const [toggle, showMenu] = useState(false)
   return (
     <>
-      <aside className={toggle ? "aside show-menu" : "aside"}>
+      <aside className={toggle ? 'aside show-menu' : 'aside'}>
         <nav className="nav">
           <div className="nav__menu">
             <ul className="nav__list">
@@ -18,29 +18,29 @@ export const Sidebar: FC = () => {
                 </div>
               </li>
               <li className="nav__item">
-                <a href="#home" className="nav__link">
-                  <i className="icon-home"></i>
+                <a href="#home" className="nav__link" aria-label="home">
+                  <i className="icon-home" />
                 </a>
               </li>
               <li className="nav__item">
-                <a href="#about" className="nav__link">
-                  <i className="icon-user-following"></i>
+                <a href="#about" className="nav__link" aria-label="about">
+                  <i className="icon-user-following" />
                 </a>
               </li>
 
               <li className="nav__item">
-                <a href="#resume" className="nav__link">
-                  <i className="icon-graduation"></i>
+                <a href="#resume" className="nav__link" aria-label="resume">
+                  <i className="icon-graduation" />
                 </a>
               </li>
               <li className="nav__item">
-                <a href="#work" className="nav__link">
-                  <i className="icon-layers"></i>
+                <a href="#work" className="nav__link" aria-label="work">
+                  <i className="icon-layers" />
                 </a>
               </li>
               <li className="nav__item">
-                <a href="#contact" className="nav__link">
-                  <i className="icon-bubble"></i>
+                <a href="#contact" className="nav__link" aria-label="contact">
+                  <i className="icon-bubble" />
                 </a>
               </li>
             </ul>
@@ -50,7 +50,7 @@ export const Sidebar: FC = () => {
         <div className="nav__footer">
           <span className="copyright">
             <p>
-              &copy; 2023 Handcrafted by{" "}
+              &copy; 2023 Handcrafted by{' '}
               <a
                 href="https://github.com/nghianm2803"
                 target="_blank"
@@ -63,15 +63,15 @@ export const Sidebar: FC = () => {
           </span>
         </div>
       </aside>
-
-      <div
-        className={toggle ? "nav__toggle nav__toggle-open" : "nav__toggle"}
+      <button
+        className={toggle ? 'nav__toggle nav__toggle-open' : 'nav__toggle'}
         onClick={() => showMenu(!toggle)}
+        aria-label="Toggle Menu"
       >
-        <i className="icon-menu"></i>
-      </div>
+        <i className="icon-menu" />
+      </button>
     </>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

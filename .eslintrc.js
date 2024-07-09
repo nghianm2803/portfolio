@@ -1,6 +1,15 @@
 module.exports = {
   root: true,
-  extends: ['eslint:recommended', 'next', 'next/core-web-vitals'],
+  extends: [
+    './node_modules/@dwarvesf/react-eslint-config',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'next',
+    'next/core-web-vitals',
+  ],
   ignorePatterns: ['node_modules/'],
   env: {
     es6: true,
@@ -11,12 +20,13 @@ module.exports = {
     io: true,
     chrome: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 10,
     ecmaFeatures: {
       jsx: true,
     },
-    project: ['./tsconfig.json'],
+    project: './tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
     createDefaultProgram: true,
     sourceType: 'module',
@@ -24,7 +34,11 @@ module.exports = {
       presets: [require.resolve('next/babel')],
     },
   },
-  rules: {},
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/no-implied-eval': 'error',
+    '@typescript-eslint/camelcase': 'off',
+  },
   overrides: [
     {
       files: ['**/*.ts?(x)', '**/*.js?(x)'],
@@ -33,6 +47,7 @@ module.exports = {
         'react/jsx-sort-props': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        '@typescript-eslint/camelcase': 'off',
       },
     },
   ],

@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import "./project.css";
-import Projects from "./ProjectData";
-import Image from "next/image";
+import React, { FC } from 'react'
+import './project.css'
+import Image from 'next/image'
+import Projects from './ProjectData'
 
 export const Project: FC = () => {
   return (
@@ -13,21 +13,26 @@ export const Project: FC = () => {
             <div className="work__card" key={project?.id}>
               <div className="work__thumbnail">
                 <Image src={project?.image} alt="" className="work__img" />
-                <div className="work__mask"></div>
+                <div className="work__mask" />
               </div>
 
               <span className="work__category">{project?.category}</span>
               <h3 className="work__title">{project?.title}</h3>
               <h4 className="work__stack">{project?.stack}</h4>
-              <a href={project?.demo} className="work__button" target="_blank">
-                <i className="icon-link work__button-icon"></i>
+              <a
+                href={project?.demo}
+                className="work__button"
+                target="_blank"
+                aria-label="button"
+              >
+                <i className="icon-link work__button-icon" />
               </a>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project

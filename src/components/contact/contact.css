@@ -48,11 +48,11 @@
 
 /*========= Dark Theme =========*/
 .dark .contact__title,
-.dark .contact__details{
+.dark .contact__details {
   color: var(--text-dark);
 }
 
-.dark .contact__form-input{
+.dark .contact__form-input {
   background-color: var(--bg-dark);
   color: var(--body-color);
 }

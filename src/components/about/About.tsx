@@ -1,6 +1,7 @@
-import React, { FC } from "react";
-import "./about.css";
-import Avatar2 from "../../assets/Avatar2.png";
+import React, { FC } from 'react'
+import './about.css'
+import Image from 'next/image'
+import Avatar2 from '../../assets/Avatar2.png'
 import {
   NodeJsIcon,
   ReactIcon,
@@ -11,8 +12,7 @@ import {
   VueIcon,
   DartIcon,
   FlutterIcon,
-} from "./Stack";
-import Image from "next/image";
+} from './Stack'
 
 const About: FC = () => {
   return (
@@ -74,7 +74,7 @@ const About: FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

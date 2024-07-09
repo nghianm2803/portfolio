@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import React, { FC } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const AlertMsg: FC = () => {
   return (
@@ -10,7 +10,7 @@ const AlertMsg: FC = () => {
       newestOnTop={false}
       pauseOnHover
     />
-  );
-};
+  )
+}
 
-export default AlertMsg;
+export default AlertMsg

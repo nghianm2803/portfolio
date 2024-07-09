@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
 const Shapes: FC = () => {
   return (
@@ -160,7 +160,7 @@ const Shapes: FC = () => {
         />
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default Shapes;
+export default Shapes

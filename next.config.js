@@ -9,8 +9,8 @@ const nextConfig = {
     NEXT_PUBLIC_MEASUREMENT_ID: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
   },
   images: {
-    domains: ["i.scdn.co"],
+    domains: ['i.scdn.co'],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

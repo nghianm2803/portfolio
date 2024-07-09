@@ -1,44 +1,44 @@
-"use client";
+'use client'
 
-import React, { FC, useEffect, useState } from "react";
-import getNowPlayingItem from "./SpotifyAPI";
-import { SpotifyIcon } from "../about/Stack";
-import Image from "next/image";
-import "./spotify.css";
+import React, { FC, useEffect, useState } from 'react'
+import Image from 'next/image'
+import getNowPlayingItem from './SpotifyAPI'
+import { SpotifyIcon } from '../about/Stack'
+import './spotify.css'
 
 interface IResult {
-  isPlaying: boolean;
-  title: string;
-  albumImageUrl: string;
-  songUrl: string;
-  artist: string;
+  isPlaying: boolean
+  title: string
+  albumImageUrl: string
+  songUrl: string
+  artist: string
 }
 
 const SpotifyNowPlaying: FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
   const [result, setResult] = useState<IResult>({
     isPlaying: false,
-    title: "",
-    albumImageUrl: "",
-    songUrl: "",
-    artist: "",
-  });
+    title: '',
+    albumImageUrl: '',
+    songUrl: '',
+    artist: '',
+  })
 
   useEffect(() => {
     Promise.all([getNowPlayingItem()]).then((results) => {
-      if (typeof results[0] === "object") {
-        setResult(results[0]);
+      if (typeof results[0] === 'object') {
+        setResult(results[0])
       }
-      setLoading(false);
-    });
-  });
+      setLoading(false)
+    })
+  })
 
   return (
     <div className="spotify__wrapper">
       {loading ? (
-        <div className="loader"></div>
+        <div className="loader" />
       ) : (
-        <>
+        <div>
           {result.isPlaying ? (
             <div className="spotify__container">
               <Image
@@ -69,10 +69,10 @@ const SpotifyNowPlaying: FC = () => {
               <p className="spotify__text">Currently offline</p>
             </div>
           )}
-        </>
+        </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SpotifyNowPlaying;
+export default SpotifyNowPlaying

@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ['master']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,7 +21,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -29,21 +29,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SPOTIFY_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_ID }}
-      NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET: ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET }}
-      NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{ secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN }}
+      NEXT_PUBLIC_SPOTIFY_CLIENT_ID:
+        ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_ID }}
+      NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET:
+        ${{ secrets.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET }}
+      NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN:
+        ${{ secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN }}
       NEXT_PUBLIC_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_MEASUREMENT_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Read env variables
         run: |
           echo "NEXT_PUBLIC_SPOTIFY_CLIENT_ID value: $NEXT_PUBLIC_SPOTIFY_CLIENT_ID"
           echo "NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET value: $NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET"
           echo "NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN value: $NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN"
           echo "NEXT_PUBLIC_MEASUREMENT_ID value: $NEXT_PUBLIC_MEASUREMENT_ID"
-          
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -61,13 +64,13 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-          
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -76,24 +79,28 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
-          
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
           path: |
             .next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key:
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json',
+            '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-            
+
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        
+        run:
+          ${{ steps.detect-package-manager.outputs.manager }} ${{
+          steps.detect-package-manager.outputs.command }}
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

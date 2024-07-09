@@ -1,9 +1,9 @@
-import Home from "@/components/home/Home";
-import About from "@/components/about/About";
-import Contact from "@/components/contact/Contact";
-import Project from "@/components/project/Project";
-import Career from "@/components/career/Career";
-import Sidebar from "@/components/sidebar/Sidebar";
+import Home from '@/components/home/Home'
+import About from '@/components/about/About'
+import Contact from '@/components/contact/Contact'
+import Project from '@/components/project/Project'
+import Career from '@/components/career/Career'
+import Sidebar from '@/components/sidebar/Sidebar'
 
 export default function Main() {
   return (
@@ -17,5 +17,5 @@ export default function Main() {
         <Contact />
       </main>
     </main>
-  );
+  )
 }

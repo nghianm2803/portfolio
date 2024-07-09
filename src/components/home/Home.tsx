@@ -1,10 +1,10 @@
-import React, { FC } from "react";
-import "./home.css";
-import Avatar1 from "../../assets/Avatar1.png";
-import HeaderSocials from "./HeaderSocials";
-import Shapes from "./Shapes";
-import Image from "next/image";
-import SpotifyNowPlaying from "../spotify/SpotifyNowPlaying";
+import React, { FC } from 'react'
+import './home.css'
+import Image from 'next/image'
+import Avatar1 from '../../assets/Avatar1.png'
+import HeaderSocials from './HeaderSocials'
+import Shapes from './Shapes'
+import SpotifyNowPlaying from '../spotify/SpotifyNowPlaying'
 
 const Home: FC = () => {
   return (
@@ -22,14 +22,14 @@ const Home: FC = () => {
           <a href="#about" className="mouse__wrapper">
             <span className="home__scroll-name">Scroll Down</span>
             <span className="mouse">
-              <span className="wheel"></span>
+              <span className="wheel" />
             </span>
           </a>
         </div>
       </div>
       <Shapes />
     </section>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
