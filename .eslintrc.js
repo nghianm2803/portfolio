@@ -1,7 +1,6 @@
 module.exports = {
   root: true,
   extends: [
-    './node_modules/@dwarvesf/react-eslint-config',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
