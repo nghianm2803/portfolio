@@ -4,6 +4,7 @@ import Contact from '@/components/contact/Contact'
 import Project from '@/components/project/Project'
 import Career from '@/components/career/Career'
 import Sidebar from '@/components/sidebar/Sidebar'
+// import Blog from '@/components/blog/Blog'
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
         <About />
         <Career />
         <Project />
+        {/* <Blog /> */}
         <Contact />
       </main>
     </main>

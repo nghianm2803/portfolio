@@ -2,36 +2,34 @@
 
 import React, { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
-import getNowPlayingItem from './SpotifyAPI'
+import { getNowPlaying } from './SpotifyAPI'
 import { SpotifyIcon } from '../about/Stack'
 import './spotify.css'
-
-interface IResult {
-  isPlaying: boolean
-  title: string
-  albumImageUrl: string
-  songUrl: string
-  artist: string
-}
+import { ISong } from './types'
 
 const SpotifyNowPlaying: FC = () => {
   const [loading, setLoading] = useState(true)
-  const [result, setResult] = useState<IResult>({
+  const [result, setResult] = useState<ISong>({
     isPlaying: false,
-    title: '',
     albumImageUrl: '',
     songUrl: '',
     artist: '',
+    name: '',
   })
 
-  useEffect(() => {
-    Promise.all([getNowPlayingItem()]).then((results) => {
-      if (typeof results[0] === 'object') {
-        setResult(results[0])
-      }
+  const fetchNowPlaying = async () => {
+    const nowPlaying = await getNowPlaying()
+    if (nowPlaying) {
+      setResult(nowPlaying as ISong)
       setLoading(false)
-    })
-  })
+    }
+  }
+
+  useEffect(() => {
+    fetchNowPlaying()
+    const interval = setInterval(fetchNowPlaying, 10000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="spotify__wrapper">
@@ -43,7 +41,7 @@ const SpotifyNowPlaying: FC = () => {
             <div className="spotify__container">
               <Image
                 src={result.albumImageUrl}
-                alt={`${result.title} album art`}
+                alt={`${result.name} album art`}
                 width={52}
                 height={52}
                 className="spotify__img"
@@ -51,7 +49,7 @@ const SpotifyNowPlaying: FC = () => {
               <div className="spotify__contents">
                 <div className="spotify__song">
                   <SpotifyIcon />
-                  <p className="spotify__text">{result.title}</p>
+                  <p className="spotify__text">{result.name}</p>
                   {result.isPlaying && (
                     <div className="playing__animation">
                       <span />
