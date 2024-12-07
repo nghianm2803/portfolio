@@ -28,7 +28,7 @@ const CareerData = [
     careerType: 'experience',
     icon: 'icon-briefcase',
     year: '2023 - Current',
-    title: 'Front-End Developer',
+    title: 'Mobile Developer',
     organization: 'EBK - Roviholdings',
   },
   {

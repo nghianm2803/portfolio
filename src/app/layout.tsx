@@ -4,6 +4,7 @@ import './globals.css'
 import './index.css'
 import { ThemeProvider } from 'next-themes'
 import Script from 'next/script'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,26 +20,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider attribute="class">
-        <head>
-          <Script
-            strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`}
-          />
-
-          <Script id="google-analytics-script" strategy="lazyOnload">
-            {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
-    `}
-          </Script>
-        </head>
-        <body className={inter.className}>{children}</body>
-      </ThemeProvider>
+      <Head>
+        <title>NghiaNM</title>
+        <meta
+          name="description"
+          content={metadata.description ?? 'Default description'}
+        />
+      </Head>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`}
+        />
+        <Script id="google-analytics-script" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </body>
     </html>
   )
 }
