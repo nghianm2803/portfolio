@@ -12,7 +12,20 @@ export const Project: FC = () => {
           return (
             <div className="work__card" key={project?.id}>
               <div className="work__thumbnail">
-                <Image src={project?.image} alt="" className="work__img" />
+                <div
+                  style={{
+                    position: 'relative',
+                    height: '260px',
+                  }}
+                >
+                  <Image
+                    src={project?.image}
+                    alt=""
+                    className="work__img"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
                 <div className="work__mask" />
               </div>
 
