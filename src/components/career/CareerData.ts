@@ -27,7 +27,7 @@ const CareerData = [
     id: 4,
     careerType: 'experience',
     icon: 'icon-briefcase',
-    year: '2023 - 2024',
+    year: '2023 - Current',
     title: 'Front-End Developer',
     organization: 'EBK - Roviholdings',
   },
@@ -44,7 +44,7 @@ const CareerData = [
     careerType: 'experience',
     icon: 'icon-briefcase',
     year: '2019 - 2020',
-    title: 'Front-End Internship',
+    title: 'Front-End Intern',
     organization: 'FPT Software',
   },
 ]
