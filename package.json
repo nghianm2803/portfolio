@@ -11,8 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky"
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "6.x",
@@ -45,7 +44,6 @@
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
-    "husky": "^9.1.7",
     "lint-staged": "^15.2.7",
     "postcss": "^8",
     "prettier": "^3.3.2",
