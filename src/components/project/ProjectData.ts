@@ -3,7 +3,7 @@ import Work2 from '../../assets/work2.png'
 import Work3 from '../../assets/work3.png'
 import Work4 from '../../assets/work4.png'
 import Work5 from '../../assets/work5.png'
-// import Work6 from '../../assets/work-6.svg'
+import Work6 from '../../assets/work6.png'
 
 const Projects = [
   {
@@ -33,27 +33,27 @@ const Projects = [
   {
     id: 4,
     image: Work4,
+    title: 'FlickPrint',
+    category: 'Frontend',
+    stack: 'NextJS, Typescript, TailwindCSS',
+    demo: 'https://flick-print.vercel.app/',
+  },
+  {
+    id: 5,
+    image: Work5,
     title: 'Taskflow',
     category: 'Fullstack',
     stack: 'MERN Stack',
     demo: 'https://taskflow-doo.netlify.app/',
   },
   {
-    id: 5,
-    image: Work5,
+    id: 6,
+    image: Work6,
     title: 'Personal site',
     category: 'Frontend',
     stack: 'Typescript, NextJS',
     demo: 'https://github.com/nghianm2803/portfolio',
   },
-  // {
-  //   id: 6,
-  //   image: Work6,
-  //   title: 'Tarot Website',
-  //   category: 'Frontend',
-  //   stack: 'ReactJS, Typescript, Redux',
-  //   demo: 'https://gitlab.com/nghianm2803/tarot-frontend',
-  // },
 ]
 
 export default Projects
