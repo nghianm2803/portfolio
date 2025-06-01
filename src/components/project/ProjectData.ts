@@ -35,8 +35,8 @@ const Projects = [
     image: Work4,
     title: 'FlickPrint',
     category: 'Frontend',
-    stack: 'NextJS, Typescript, TailwindCSS',
-    demo: 'https://flick-print.vercel.app/',
+    stack: 'Typescript, NextJS, TailwindCSS',
+    demo: 'https://flickprint.vercel.app/',
   },
   {
     id: 5,
