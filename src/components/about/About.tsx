@@ -12,6 +12,7 @@ import {
   VueIcon,
   DartIcon,
   FlutterIcon,
+  RedisIcon,
 } from './Stack'
 
 const About: FC = () => {
@@ -69,6 +70,7 @@ const About: FC = () => {
                 <NodeJsIcon />
                 <ExpressIcon />
                 <MongoDbIcon />
+                <RedisIcon />
               </div>
             </div>
           </div>
