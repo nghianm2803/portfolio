@@ -29,7 +29,7 @@ const CareerData = [
     icon: 'icon-briefcase',
     year: '2023 - Current',
     title: 'Mobile Developer',
-    organization: 'EBK - Roviholdings',
+    organization: 'Rovi Travel',
   },
   {
     id: 5,
