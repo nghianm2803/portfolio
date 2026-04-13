@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import './index.css'
 import { ThemeProvider } from 'next-themes'
 import Script from 'next/script'
-import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,15 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <Head>
-        <title>NghiaNM</title>
-        <meta
-          name="description"
-          content={metadata.description ?? 'Default description'}
-        />
-      </Head>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100`}>
         <ThemeProvider attribute="class">{children}</ThemeProvider>
         <Script
           strategy="lazyOnload"

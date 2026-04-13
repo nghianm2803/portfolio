@@ -1,13 +1,32 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sidebar offset for fixed nav */
 .main {
   margin-left: 110px;
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .main {
     margin-left: 0;
   }
+}
+
+/* Scroll indicator wheel animation */
+@keyframes ani-mouse {
+  0%   { top: 29%; }
+  15%  { top: 50%; }
+  50%  { top: 50%; }
+  100% { top: 29%; }
+}
+
+.wheel {
+  animation: ani-mouse 2s linear infinite;
 }

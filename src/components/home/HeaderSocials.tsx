@@ -4,10 +4,11 @@ import { SiLeetcode } from 'react-icons/si'
 
 const HeaderSocials: FC = () => {
   return (
-    <div className="home__socials">
+    <div className="flex justify-center gap-6 my-6 z-10">
       <a
         href="https://www.linkedin.com/in/nghianm2803/"
-        className="home__social-link"
+        className="text-xl transition-opacity hover:opacity-70"
+        style={{ color: '#0A66C2' }}
         target="_blank"
         aria-label="LinkedIn"
       >
@@ -15,7 +16,7 @@ const HeaderSocials: FC = () => {
       </a>
       <a
         href="https://github.com/nghianm2803"
-        className="home__social-link"
+        className="text-xl text-gray-900 dark:text-gray-100 transition-opacity hover:opacity-70"
         target="_blank"
         aria-label="Github"
       >
@@ -23,7 +24,8 @@ const HeaderSocials: FC = () => {
       </a>
       <a
         href="https://leetcode.com/u/nghianm2803/"
-        className="home__social-link"
+        className="text-xl transition-opacity hover:opacity-70"
+        style={{ color: '#FFA116' }}
         target="_blank"
         aria-label="Leetcode"
       >
@@ -31,7 +33,8 @@ const HeaderSocials: FC = () => {
       </a>
       <a
         href="https://t.me/DooCharSiu"
-        className="home__social-link"
+        className="text-xl transition-opacity hover:opacity-70"
+        style={{ color: '#26A5E4' }}
         target="_blank"
         aria-label="Telegram"
       >

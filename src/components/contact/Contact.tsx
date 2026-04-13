@@ -1,17 +1,18 @@
 'use client'
 
 import React, { FC, useRef, useState } from 'react'
-import './contact.css'
 import emailjs from 'emailjs-com'
 import { toast } from 'react-toastify'
 import ToastMsg from './Toast'
 
-export const Contact: FC = () => {
+const inputClass =
+  'w-full px-5 py-3 text-sm bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-neutral-600 outline-none focus:border-gray-900 dark:focus:border-gray-100 transition-colors'
+
+const Contact: FC = () => {
   const form = useRef<HTMLFormElement>(null)
   const [submitting, setSubmitting] = useState(false)
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sendEmail = (e: any) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSubmitting(true)
 
@@ -29,72 +30,75 @@ export const Contact: FC = () => {
             'Thank you for your message! I`ll get back to you soon!',
           )
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (error: any) => {
+        (error: { text: string }) => {
           setSubmitting(false)
           toast.error(error.text)
         },
       )
-    e.target.reset()
+    form.current?.reset()
   }
+
   return (
-    <section className="contact container section" id="contact">
-      <h2 className="section__title">Get In Touch</h2>
-      <div className="contact__container grid">
-        <div className="contact__info">
-          <h3 className="contact__title">Let&apos;s talk about everything!</h3>
-          <p className="contact__details">
+    <section className="pt-28 pb-24 max-w-[1080px] mx-auto px-4" id="contact">
+      <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        Get In Touch
+      </h2>
+      <div className="w-10 h-0.5 bg-gray-900 dark:bg-gray-100 mb-12" />
+
+      <div className="grid md:grid-cols-[4fr_8fr] gap-8">
+        {/* Info */}
+        <div>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            Let&apos;s talk about everything!
+          </h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
             I&apos;m always interested in new projects and opportunities.
             Don&apos;t hesitate to give me a call or send an email, I&apos;ll
             get back to you as soon as I can! 👋
           </p>
         </div>
 
-        <form className="contact__form" ref={form} onSubmit={sendEmail}>
-          <div className="contact__form-group">
-            <div className="contact__form-div">
-              <input
-                type="text"
-                name="name"
-                className="contact__form-input"
-                placeholder="Your full name"
-                required
-              />
-            </div>
-            <div className="contact__form-div">
-              <input
-                type="email"
-                name="email"
-                className="contact__form-input"
-                placeholder="Your email"
-                required
-              />
-            </div>
-          </div>
-          <div className="contact__form-div">
+        {/* Form */}
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
-              name="subject"
-              className="contact__form-input"
-              placeholder="Your subject"
+              name="name"
+              placeholder="Your full name"
               required
+              className={inputClass}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className={inputClass}
             />
           </div>
-          <div className="contact__form-div contact__form-area">
-            <textarea
-              typeof="text"
-              name="message"
-              cols={30}
-              rows={10}
-              className="contact__form-input"
-              placeholder="Write your message"
-              required
-            />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Your subject"
+            required
+            className={inputClass}
+          />
+          <textarea
+            name="message"
+            rows={8}
+            placeholder="Write your message"
+            required
+            className={`${inputClass} resize-none`}
+          />
+          <div>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="px-8 py-3 text-sm font-semibold border border-gray-900 dark:border-gray-100 bg-gray-900 dark:bg-transparent text-white dark:text-gray-100 rounded-lg hover:bg-transparent hover:text-gray-900 dark:hover:bg-gray-100 dark:hover:text-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {submitting ? 'Submitting...' : 'Submit'}
+            </button>
           </div>
-
-          <button type="submit" className="btn" disabled={submitting}>
-            {submitting ? 'Submitting...' : 'Submit'}
-          </button>
         </form>
       </div>
       <ToastMsg />
