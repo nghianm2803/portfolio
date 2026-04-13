@@ -20,7 +20,7 @@ const Home: FC = () => {
           Minh Nghia
         </h1>
         <span className="text-gray-500 dark:text-gray-400 text-base">
-          I&apos;m a Mobile Developer who is eager to learn, coding as a hobby.
+          Software Engineer — mobile &amp; full-stack web development.
         </span>
         <HeaderSocials />
       </div>

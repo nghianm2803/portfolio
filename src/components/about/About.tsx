@@ -12,6 +12,9 @@ import {
   DartIcon,
   FlutterIcon,
   RedisIcon,
+  PhpIcon,
+  LaravelIcon,
+  PostgresqlIcon,
 } from './Stack'
 
 const About: FC = () => {
@@ -41,12 +44,13 @@ const About: FC = () => {
             <strong className="text-gray-900 dark:text-gray-100 font-semibold">
               Minh Nghia
             </strong>
-            , an enthusiastic mobile developer with a strong background in
-            cross-platform technologies. I am proficient in Dart/Flutter GetX.
-            Additionally, I have experience with TypeScript, JavaScript, and
-            frameworks such as ReactJS and VueJS. My expertise extends to
-            backend development with NodeJS and ExpressJS, and database
-            management using MongoDB.
+            , a Software Engineer with experience across mobile and full-stack
+            web development. I am proficient in Dart/Flutter (GetX) for
+            cross-platform mobile apps, TypeScript/JavaScript with ReactJS and
+            VueJS for frontend, and NodeJS/ExpressJS /PHP/Laravel for backend.
+            My database experience covers MongoDB, PostgreSQL, and Redis. I
+            enjoy building quality solutions and am always looking for new
+            challenges to grow.
           </p>
 
           {/* Skills */}
@@ -55,7 +59,7 @@ const About: FC = () => {
               <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-2">
                 Mobile App
               </p>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <DartIcon />
                 <FlutterIcon />
               </div>
@@ -65,7 +69,7 @@ const About: FC = () => {
               <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-2">
                 Frontend
               </p>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <TsIcon />
                 <JsIcon />
                 <ReactIcon />
@@ -75,12 +79,23 @@ const About: FC = () => {
 
             <div>
               <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-2">
-                Backend &amp; Database
+                Backend
               </p>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <NodeJsIcon />
                 <ExpressIcon />
+                <PhpIcon />
+                <LaravelIcon />
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-2">
+                Database
+              </p>
+              <div className="flex gap-2 flex-wrap">
                 <MongoDbIcon />
+                <PostgresqlIcon />
                 <RedisIcon />
               </div>
             </div>
